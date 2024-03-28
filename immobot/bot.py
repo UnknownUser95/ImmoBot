@@ -95,12 +95,6 @@ async def on_ready() -> None:
 	print("bot is ready!")
 
 
-@bot.event
-async def on_message_delete(message: Message) -> None:
-	if listing := Listing.get_from_message_id(message.id):
-		await listing.delete()
-
-
 # --------------- slash commands ---------------
 
 

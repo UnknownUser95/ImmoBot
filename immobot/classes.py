@@ -72,7 +72,8 @@ class Listing:
 		# guild_id need to be saved, as message will be deleted
 		guild_id: int = self.message.guild.id
 		
-		await self.message.delete()
+		if self.message:
+			await self.message.delete()
 		LISTINGS[guild_id].remove(self)
 		
 		if len(LISTINGS[guild_id]) == 0:
