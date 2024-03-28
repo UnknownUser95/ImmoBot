@@ -207,8 +207,8 @@ async def add_address(
 async def list_everything(
 		context: ApplicationContext
 ):
-	context.respond(LISTINGS, ephemeral=True)
-	context.respond(CHANNELS, ephemeral=True)
+	await context.respond(LISTINGS, ephemeral=True)
+	await context.respond(CHANNELS, ephemeral=True)
 
 
 # --------------- message interaction handler ---------------
