@@ -192,6 +192,17 @@ async def add_tour_time(
 	await context.respond(f"time set to {listing.tour_time.isoformat()}", ephemeral=True)
 
 
+@bot.slash_command(name="add-address")
+async def add_address(
+		context: ApplicationContext,
+		id: Option(int, autocomplete=basic_autocomplete(get_all_listings)),
+		address: str
+):
+	listing: Listing = Listing.get_from_id(context.guild.id, id)
+	await listing.set_address(address)
+	await context.respond(f"set address on {listing.id}", ephemeral=True)
+
+
 # --------------- message interaction handler ---------------
 
 
