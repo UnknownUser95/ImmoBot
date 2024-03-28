@@ -198,6 +198,14 @@ async def add_address(
 	await context.respond(f"set address on {listing.id}", ephemeral=True)
 
 
+@bot.slash_command(name="debug")
+async def list_everything(
+		context: ApplicationContext
+):
+	context.respond(LISTINGS, ephemeral=True)
+	context.respond(CHANNELS, ephemeral=True)
+
+
 # --------------- message interaction handler ---------------
 
 

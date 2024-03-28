@@ -87,6 +87,9 @@ class Listing:
 	
 	@staticmethod
 	def get_from_id(guild: int, requested_id: int) -> Listing | None:
+		if guild not in LISTINGS:
+			return None
+		
 		for listing in LISTINGS[guild]:
 			if listing.id == requested_id:
 				return listing
