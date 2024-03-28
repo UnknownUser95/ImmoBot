@@ -24,7 +24,7 @@ def get_listing_for_message(message: Message) -> Listing | None:
 
 
 async def get_all_listings(context: AutocompleteContext) -> list:
-	return [listing.id for listing in LISTINGS[context.interaction.guild.id]]
+	return [listing.id for listing in LISTINGS[context.interaction.guild.id]] if context.interaction.guild.id in LISTINGS else []
 
 
 async def get_all_tags(context: AutocompleteContext) -> list:
