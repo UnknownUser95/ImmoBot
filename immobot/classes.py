@@ -144,6 +144,7 @@ class Listing:
 			
 			return listing
 		except discord.errors.DiscordException:
+			print(f"cannot load listing, the message most likely has been deleted. Recovered data: {data}")
 			return None
 	
 	_SAVE_FILE: str = "listings.json"
