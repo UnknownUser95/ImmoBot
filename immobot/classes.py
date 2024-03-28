@@ -83,7 +83,7 @@ class Listing:
 		
 		self.save_all_listings()
 	
-	async def set_address(self, address: str) -> None:
+	async def set_address(self, address: str | None) -> None:
 		self.address = address
 		await self.update_message()
 	

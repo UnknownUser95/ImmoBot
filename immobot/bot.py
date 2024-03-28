@@ -191,11 +191,16 @@ async def add_tour_time(
 async def add_address(
 		context: ApplicationContext,
 		id: Option(int, autocomplete=basic_autocomplete(get_all_listings)),
-		address: str
+		address: str | None
 ):
 	listing: Listing = Listing.get_from_id(context.guild.id, id)
-	await listing.set_address(address)
-	await context.respond(f"set address on {listing.id} to {address}", ephemeral=True)
+	
+	if address:
+		await listing.set_address(address)
+		await context.respond(f"set address on {listing.id} to {address}", ephemeral=True)
+	else:
+		await listing.set_address(None)
+		await context.respond(f"removed address from {listing.id}", ephemeral=True)
 
 
 @bot.slash_command(name="debug")
