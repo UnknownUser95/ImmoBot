@@ -90,7 +90,7 @@ async def on_ready() -> None:
 		
 		print("done")
 	
-	print("loading all existing listings. This may take some time")
+	print("loading all existing listings. This will take some time.")
 	await Listing.load_all_listings(bot)
 	
 	print("bot is ready!")
@@ -195,7 +195,7 @@ async def add_address(
 ):
 	listing: Listing = Listing.get_from_id(context.guild.id, id)
 	await listing.set_address(address)
-	await context.respond(f"set address on {listing.id}", ephemeral=True)
+	await context.respond(f"set address on {listing.id} to {address}", ephemeral=True)
 
 
 @bot.slash_command(name="debug")

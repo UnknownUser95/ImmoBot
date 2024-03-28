@@ -55,6 +55,8 @@ class Listing:
 		
 		if self.tour_time:
 			embed.add_field(name="Viewing time", value=self.tour_time.isoformat())
+		if self.address:
+			embed.add_field(name="Address", value=self.address)
 		
 		return embed
 	
