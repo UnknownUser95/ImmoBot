@@ -5,7 +5,7 @@ from discord import Bot, ApplicationContext, Option, AutocompleteContext, Guild,
 from discord.ext import tasks
 from discord.utils import basic_autocomplete
 
-from immoscout.classes import LISTINGS, Tag, CHANNELS, Listing, Channels, ModificationMode
+from immobot.classes import LISTINGS, Tag, CHANNELS, Listing, Channels, ModificationMode
 
 # bot: Bot = Bot(intents=Intents.guild_messages)
 intents = Intents.default()

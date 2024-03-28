@@ -1,5 +1,5 @@
-from immoscout import TOKEN
-from immoscout.bot import bot
+from immobot import TOKEN
+from immobot.bot import bot
 
 
 def main() -> None:
