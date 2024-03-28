@@ -90,6 +90,7 @@ async def on_ready() -> None:
 		
 		print("done")
 	
+	print("loading all existing listings. This may take some time")
 	await Listing.load_all_listings(bot)
 	
 	print("bot is ready!")
