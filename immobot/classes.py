@@ -165,12 +165,13 @@ class Listing:
 			full_data = json.load(file)
 		
 		for guild_id in full_data:
+			gid = int(guild_id)
 			for listing_data in full_data[guild_id]:
 				if listing := await cls.deserialize(bot, listing_data):
-					if guild_id in LISTINGS:
-						LISTINGS[guild_id].append(listing)
+					if gid in LISTINGS:
+						LISTINGS[gid].append(listing)
 					else:
-						LISTINGS[guild_id] = [listing]
+						LISTINGS[gid] = [listing]
 		
 		# messages may have been deleted, update accordingly
 		cls.save_all_listings()
